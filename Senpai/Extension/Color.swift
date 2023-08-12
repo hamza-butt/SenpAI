@@ -12,7 +12,7 @@ extension Color{
     
     static let LighGrayColor = Color("LighGrayColor")
     static let DarkGrayColor = Color("DarkGrayColor")
-    static let BlueGrayColor = Color("BlueGrayColor")
+    static let BlueColor = Color("BlueColor")
     
 }
 

@@ -29,8 +29,10 @@
 		37C39BDD2A875F140052790A /* Tabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C39BDC2A875F140052790A /* Tabbar.swift */; };
 		37C39BE02A8771BD0052790A /* UnlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C39BDF2A8771BD0052790A /* UnlockView.swift */; };
 		37C39BE32A8771E60052790A /* unlcokFeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C39BE22A8771E60052790A /* unlcokFeatureView.swift */; };
-		37C39BE52A8778660052790A /* GeneralNavigationHidden.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C39BE42A8778660052790A /* GeneralNavigationHidden.swift */; };
 		37C39BE72A8778730052790A /* GeneralHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C39BE62A8778730052790A /* GeneralHeader.swift */; };
+		37F832192A87C71F002F3560 /* TokenStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F832182A87C71F002F3560 /* TokenStore.swift */; };
+		37F8321C2A87C745002F3560 /* TokeStoreHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F8321B2A87C745002F3560 /* TokeStoreHeaderView.swift */; };
+		37F8321E2A87D162002F3560 /* TokePricesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F8321D2A87D162002F3560 /* TokePricesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,8 +59,10 @@
 		37C39BDC2A875F140052790A /* Tabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabbar.swift; sourceTree = "<group>"; };
 		37C39BDF2A8771BD0052790A /* UnlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockView.swift; sourceTree = "<group>"; };
 		37C39BE22A8771E60052790A /* unlcokFeatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = unlcokFeatureView.swift; sourceTree = "<group>"; };
-		37C39BE42A8778660052790A /* GeneralNavigationHidden.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralNavigationHidden.swift; sourceTree = "<group>"; };
 		37C39BE62A8778730052790A /* GeneralHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralHeader.swift; sourceTree = "<group>"; };
+		37F832182A87C71F002F3560 /* TokenStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenStore.swift; sourceTree = "<group>"; };
+		37F8321B2A87C745002F3560 /* TokeStoreHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokeStoreHeaderView.swift; sourceTree = "<group>"; };
+		37F8321D2A87D162002F3560 /* TokePricesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokePricesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +119,7 @@
 		37040A182A83DBA300C428E8 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				37F832172A87C70F002F3560 /* token Store */,
 				37C39BDE2A8771B40052790A /* Unlock */,
 				37C39BDB2A875EB30052790A /* Tabbar */,
 				37040A312A84030C00C428E8 /* Explore */,
@@ -148,7 +153,6 @@
 				37040A2A2A83EC2400C428E8 /* InputView.swift */,
 				37040A232A83DEB000C428E8 /* HeaderView.swift */,
 				37040A2C2A83FCA600C428E8 /* BaseButton.swift */,
-				37C39BE42A8778660052790A /* GeneralNavigationHidden.swift */,
 				37C39BE62A8778730052790A /* GeneralHeader.swift */,
 			);
 			path = "Common Widgets";
@@ -231,6 +235,24 @@
 			path = Widget;
 			sourceTree = "<group>";
 		};
+		37F832172A87C70F002F3560 /* token Store */ = {
+			isa = PBXGroup;
+			children = (
+				37F8321A2A87C73B002F3560 /* Widgets */,
+				37F832182A87C71F002F3560 /* TokenStore.swift */,
+			);
+			path = "token Store";
+			sourceTree = "<group>";
+		};
+		37F8321A2A87C73B002F3560 /* Widgets */ = {
+			isa = PBXGroup;
+			children = (
+				37F8321B2A87C745002F3560 /* TokeStoreHeaderView.swift */,
+				37F8321D2A87D162002F3560 /* TokePricesView.swift */,
+			);
+			path = Widgets;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -301,6 +323,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37F8321E2A87D162002F3560 /* TokePricesView.swift in Sources */,
+				37F8321C2A87C745002F3560 /* TokeStoreHeaderView.swift in Sources */,
 				37C39BD02A8749930052790A /* ExploreHeader.swift in Sources */,
 				37040A0D2A83BA1E00C428E8 /* Persistence.swift in Sources */,
 				37040A5C2A86896A00C428E8 /* ExploreSectionView.swift in Sources */,
@@ -312,6 +336,7 @@
 				37040A302A83FE5800C428E8 /* StyleSelectionView.swift in Sources */,
 				37C39BCE2A873C1F0052790A /* InspirationSectionView.swift in Sources */,
 				37C39BDA2A87513C0052790A /* SettingsSectionView.swift in Sources */,
+				37F832192A87C71F002F3560 /* TokenStore.swift in Sources */,
 				37040A1E2A83DC3000C428E8 /* GenerateViewViewModel.swift in Sources */,
 				37C39BDD2A875F140052790A /* Tabbar.swift in Sources */,
 				37040A332A84031C00C428E8 /* Explore.swift in Sources */,
@@ -319,7 +344,6 @@
 				37C39BE02A8771BD0052790A /* UnlockView.swift in Sources */,
 				37040A1C2A83DBC000C428E8 /* GenerateView.swift in Sources */,
 				37040A2B2A83EC2400C428E8 /* InputView.swift in Sources */,
-				37C39BE52A8778660052790A /* GeneralNavigationHidden.swift in Sources */,
 				37040A102A83BA1E00C428E8 /* Senpai.xcdatamodeld in Sources */,
 				37040A2D2A83FCA700C428E8 /* BaseButton.swift in Sources */,
 				37040A212A83DD4500C428E8 /* Constants.swift in Sources */,

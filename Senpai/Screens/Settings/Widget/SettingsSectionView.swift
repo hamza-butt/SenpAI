@@ -151,7 +151,7 @@ struct SettingsSectionView: View {
             if itemIndex == 0 {
                 return AnyView(UnlockView())
             } else if itemIndex == 1 {
-                return AnyView(Text("Test"))
+                return AnyView(TokenStore())
             } else {
                 return AnyView(Text("Test"))
             }

@@ -37,7 +37,7 @@ struct InputView: View {
                 HStack{
                     
                     Text("My Art")
-                        .foregroundColor(Color.BlueGrayColor)
+                        .foregroundColor(Color.BlueColor)
                         .font(.system(size: 12))
                         .fontWeight(.bold)
                     

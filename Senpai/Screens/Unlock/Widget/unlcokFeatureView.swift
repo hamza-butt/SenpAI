@@ -133,7 +133,7 @@ struct unlcokFeatureView: View {
             Text("(less than $0.48 per week)")
                 .font(.system(size: 14))
                 .fontWeight(.bold)
-                .foregroundColor(Color(hex: 0x27B1FF))
+                .foregroundColor(Color.BlueColor)
         }
     }
     
