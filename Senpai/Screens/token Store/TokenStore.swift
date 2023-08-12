@@ -10,28 +10,33 @@ import SwiftUI
 struct TokenStore: View {
     
     @Environment(\.presentationMode) var presentationMode
+    @State var isLoading = false
     
     var body: some View {
         
-        ZStack {
-            
-            VStack {
+        ActivityIndicatorLoading(isShowing: $isLoading) {
+            ZStack {
                 
-                ScrollView {
-                    TokeStoreHeaderView()
-                    TokePricesView()
+                VStack {
+                    
+                    ScrollView {
+                        TokeStoreHeaderView()
+                        TokePricesView()
+                    }
+                    .padding(.top,30)
+                    .ignoresSafeArea()
+                    
+                    BaseButton(title: "Continue")
+                        .padding(.horizontal,34)
                 }
-                .padding(.top,30)
-                .ignoresSafeArea()
-                
-                BaseButton(title: "Continue")
-                    .padding(.horizontal,34)
-            }
 
-            crossButton
-            
-            
+                crossButton
+                
+ 
+            }
         }
+        
+        
         .navigationBarBackButtonHidden(true)
         
         

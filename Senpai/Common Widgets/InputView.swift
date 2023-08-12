@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct InputView: View {
-    @State private var text: String = ""
+    @Binding var inputText: String
     let MAX_LIMIT = 150
     
     var body: some View {
@@ -56,16 +56,16 @@ struct InputView: View {
     
     var inputView: some View {
         VStack {
-            TextEditor(text: $text)
+            TextEditor(text: $inputText)
                 .padding(8)
-                .onChange(of: text) { newText in
+                .onChange(of: inputText) { newText in
                     if newText.count > MAX_LIMIT {
-                        text = String(newText.prefix(MAX_LIMIT))
+                        inputText = String(newText.prefix(MAX_LIMIT))
                     }
                 }
             
             HStack {
-                Text("\(text.count) / \(MAX_LIMIT)")
+                Text("\(inputText.count) / \(MAX_LIMIT)")
                     .foregroundColor(Color.gray)
                     .font(.system(size: 12))
                     .fontWeight(.medium)
@@ -82,7 +82,7 @@ struct InputView: View {
                     Text(" = 0\(IMAGE_GENERATE_PRICE)")
                         .font(.system(size: 18))
                         .fontWeight(.bold)
-                        .foregroundColor(Color.blue)
+                        .foregroundColor(Color.BlueColor)
                 }
             }
             .padding(.horizontal, 16)
@@ -103,16 +103,6 @@ struct InputView: View {
 
 struct InputView_Previews: PreviewProvider {
     static var previews: some View {
-        InputView()
+        InputView(inputText: .constant("Hello"))
     }
 }
-
-
-//
-//HStack {
-//    Text("Enter Prompt")
-//        .bold()
-//        .font(.system(size: 16))
-//
-//    Spacer()
-//}

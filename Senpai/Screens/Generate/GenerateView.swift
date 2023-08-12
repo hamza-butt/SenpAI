@@ -11,33 +11,35 @@ struct GenerateView: View {
 
     
     @StateObject private var viewModel = GenerateViewViewModel()
+    @State var isLoading = false
+    @State private var inputText: String = ""
+    
     
     var body: some View {
         
         NavigationView {
-            VStack(spacing:32){
+            
+            ActivityIndicatorLoading(isShowing: $isLoading) {
                 
-                HeaderView(title: "Generate")
-                    .padding(.horizontal,24)
-                
-                ScrollView(showsIndicators: false) {
+                VStack(spacing:32){
                     
-                    InputView()
-                        .padding(.horizontal,24)
-                    Spacer(minLength: 30)
-                    
-                    BaseButton(title: "Generate")
+                    HeaderView(title: "Generate")
                         .padding(.horizontal,24)
                     
-                    
-                    StyleSelectionView()
-                    
-                    
+                    ScrollView(showsIndicators: false) {
+                        
+                        InputView(inputText: $inputText)
+                            .padding(.horizontal,24)
+                        Spacer(minLength: 30)
+
+                        BaseButton(title: "Generate")
+                            .padding(.horizontal,24)
+                        
+                        StyleSelectionView()
+                        
+                    }
                 }
-                
             }
-            
-            
         }
         
         
