@@ -10,10 +10,11 @@ import SwiftUI
 struct BaseButton: View {
     
     @State var title:String = "Generate"
+    var buttonTapped:(()->Void)?
     
     var body: some View {
         Button {
-            
+            buttonTapped?()
         } label: {
             
             HStack{

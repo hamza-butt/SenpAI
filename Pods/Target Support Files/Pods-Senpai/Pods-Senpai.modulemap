@@ -1,0 +1,6 @@
+framework module Pods_Senpai {
+  umbrella header "Pods-Senpai-umbrella.h"
+
+  export *
+  module * { export * }
+}

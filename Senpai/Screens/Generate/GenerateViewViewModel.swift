@@ -10,10 +10,35 @@ import Combine
 
 class GenerateViewViewModel: ObservableObject {
  
-    @Published var base64Response = ""
+    @Published var prompt: String = ""
+    
+    @Published var showErrorToast = false
+    @Published var errorText = ""
+    @Published var showLoading:Bool = false
+    
+    @Published var promptResponseImage:Image? = nil
+    @Published var isImageGenerated:Bool = false
+
+    var isGoNext: Bool{
+        return promptResponseImage != nil
+    }
+    
+    func checkInput(){
+        
+        if prompt.isEmpty{
+            showErrorToast = true
+            errorText = "Please Enter Prompt"
+            return
+        }
+        
+        callImageCreate()
+        
+        
+    }
     
     func callImageCreate() {
         print("function called")
+        showLoading = true
         
         let url = URL(string: "https://110602490-sharedlora.gateway.alpha.fal.ai")!
         
@@ -27,7 +52,7 @@ class GenerateViewViewModel: ObservableObject {
         request.allHTTPHeaderFields = headers
         
         let body: [String: Any] = [
-            "prompt": "photo of a european medieval 40 year old queen, silver hair, highly detailed face, detailed eyes, head shot, intricate crown, age spots, wrinkles",
+            "prompt": prompt,
             "model_name": "https://civitai.com/api/download/models/105035",
             "lora_weights": ["https://civitai.com/api/download/models/107366"],
             
@@ -45,32 +70,47 @@ class GenerateViewViewModel: ObservableObject {
             let jsonData = try JSONSerialization.data(withJSONObject: body, options: [])
             request.httpBody = jsonData
         } catch {
-            print("Error serializing JSON: \(error)")
+            showErrorToast = true
+            errorText = error.localizedDescription
             return
         }
         
-        URLSession.shared.dataTask(with: request) { data, response, error in
-            if let error = error {
-                print("Error: \(error)")
-                return
-            }
+        
+        URLSession.shared.dataTask(with: request) {[weak self] data, response, error in
+            guard let self = self else { return }
             
-            if let data = data {
-                do {
-                    let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
-                    guard let json = json else { return }
-                    guard let base64Values = json["result"] as? String else { return }
-                    print("base64Values ",base64Values)
-                    self.base64Response = base64Values
-                } catch {
-                    print("Error parsing JSON: \(error)")
+            DispatchQueue.main.async {
+                self.showLoading = false
+                
+                if let error = error {
+                    self.showErrorToast = true
+                    self.errorText = error.localizedDescription
+                    return
+                }
+                
+                if let data = data {
+                    do {
+                        let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+                        guard let json = json else { return }
+                        guard let base64Values = json["result"] as? String else { return }
+                        print("base64Values ",base64Values)
+
+                        self.promptResponseImage = self.convertBase64ToImage(base64Values)
+                        self.isImageGenerated = true
+                        
+                    } catch {
+                        self.showErrorToast = true
+                        self.errorText = error.localizedDescription
+                    }
                 }
             }
         }.resume()
+
+        
     }
     
     
-    func convertBase64ToImage() -> Image? {
+    func convertBase64ToImage(_ base64Response:String) -> Image? {
         guard let data = Data(base64Encoded: base64Response),
               let uiImage = UIImage(data: data) else {
             return nil

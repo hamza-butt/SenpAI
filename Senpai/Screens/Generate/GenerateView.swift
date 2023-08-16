@@ -6,20 +6,20 @@
 //
 
 import SwiftUI
+import AlertToast
+
 
 struct GenerateView: View {
 
     
     @StateObject private var viewModel = GenerateViewViewModel()
-    @State var isLoading = false
-    @State private var inputText: String = ""
-    
+//    @State var isImageGenerated = false
     
     var body: some View {
         
         NavigationView {
             
-            ActivityIndicatorLoading(isShowing: $isLoading) {
+            ActivityIndicatorLoading(isShowing: $viewModel.showLoading) {
                 
                 VStack(spacing:32){
                     
@@ -28,17 +28,45 @@ struct GenerateView: View {
                     
                     ScrollView(showsIndicators: false) {
                         
-                        InputView(inputText: $inputText)
+                        InputView(inputText: $viewModel.prompt)
                             .padding(.horizontal,24)
                         Spacer(minLength: 30)
 
-                        BaseButton(title: "Generate")
-                            .padding(.horizontal,24)
                         
+                        BaseButton(title: "Generate") {
+                            viewModel.checkInput()
+                        }
+                        .padding(.horizontal,24)
                         StyleSelectionView()
                         
                     }
+                    
+                    
+                    
+                    NavigationLink(destination: ImageCompletedView(promptResponseImage: viewModel.promptResponseImage ?? Image("base64.online")),
+                                   isActive: $viewModel.isImageGenerated,
+                                   label: {
+                        EmptyView()
+                    })
+                    
+//                    if let image = viewModel.promptResponseImage {
+//
+//                        NavigationLink(<#T##titleKey: LocalizedStringKey##LocalizedStringKey#>) {
+//                            <#code#>
+//                        }
+//                         NavigationLink(destination: ImageCompletedView(promptResponseImage: image)) {
+//                             EmptyView()
+//                         }
+//                         .hidden()
+//                     }
+                    
+                    
                 }
+            }
+            
+            .toast(isPresenting: $viewModel.showErrorToast){
+
+                AlertToast(displayMode: .hud, type: .image("crossed", .red), title: "Error", subTitle: viewModel.errorText)
             }
         }
         
@@ -46,18 +74,7 @@ struct GenerateView: View {
         
         
         
-//        VStack {
-//            Button("Create Video") {
-//                viewModel.callImageCreate()
-//            }
-//
-//            if let image = viewModel.convertBase64ToImage() {
-//                image
-//                    .resizable()
-//                    .aspectRatio(contentMode: .fit)
-//                    .frame(height: 300)
-//            }
-//        }
+
         
         
     }
@@ -70,3 +87,6 @@ struct GenerateView_Previews: PreviewProvider {
         GenerateView()
     }
 }
+
+
+

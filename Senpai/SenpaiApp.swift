@@ -13,7 +13,7 @@ struct SenpaiApp: App {
 
     var body: some Scene {
         WindowGroup {
-            Tabbar()
+            ContentView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

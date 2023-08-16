@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0DD73BB32E038BC6A39B09A6 /* Pods_Senpai.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE6A108D826F7EA0EDB3B536 /* Pods_Senpai.framework */; };
 		37040A042A83BA1C00C428E8 /* SenpaiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37040A032A83BA1C00C428E8 /* SenpaiApp.swift */; };
 		37040A082A83BA1E00C428E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37040A072A83BA1E00C428E8 /* Assets.xcassets */; };
 		37040A0B2A83BA1E00C428E8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37040A0A2A83BA1E00C428E8 /* Preview Assets.xcassets */; };
@@ -20,6 +21,7 @@
 		37040A302A83FE5800C428E8 /* StyleSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37040A2F2A83FE5800C428E8 /* StyleSelectionView.swift */; };
 		37040A332A84031C00C428E8 /* Explore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37040A322A84031B00C428E8 /* Explore.swift */; };
 		37040A5C2A86896A00C428E8 /* ExploreSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37040A5B2A86896900C428E8 /* ExploreSectionView.swift */; };
+		3784F6E92A88CCE300EFBEA5 /* ImageCompletedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3784F6E82A88CCE300EFBEA5 /* ImageCompletedView.swift */; };
 		37C39BCE2A873C1F0052790A /* InspirationSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C39BCD2A873C1F0052790A /* InspirationSectionView.swift */; };
 		37C39BD02A8749930052790A /* ExploreHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C39BCF2A8749920052790A /* ExploreHeader.swift */; };
 		37C39BD22A874B620052790A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C39BD12A874B620052790A /* SettingsView.swift */; };
@@ -34,6 +36,8 @@
 		37F832202A87EBEA002F3560 /* ActivityIndicatorLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F8321F2A87EBEA002F3560 /* ActivityIndicatorLoading.swift */; };
 		37F832262A87F4AB002F3560 /* GenerateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F832252A87F4AB002F3560 /* GenerateView.swift */; };
 		37F832282A87F4E9002F3560 /* GenerateViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F832272A87F4E8002F3560 /* GenerateViewViewModel.swift */; };
+		37F8322A2A87F692002F3560 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F832292A87F692002F3560 /* ContentView.swift */; };
+		37F8322C2A88AF09002F3560 /* ReplicateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F8322B2A88AF09002F3560 /* ReplicateManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +55,7 @@
 		37040A2F2A83FE5800C428E8 /* StyleSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleSelectionView.swift; sourceTree = "<group>"; };
 		37040A322A84031B00C428E8 /* Explore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Explore.swift; sourceTree = "<group>"; };
 		37040A5B2A86896900C428E8 /* ExploreSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreSectionView.swift; sourceTree = "<group>"; };
+		3784F6E82A88CCE300EFBEA5 /* ImageCompletedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCompletedView.swift; sourceTree = "<group>"; };
 		37C39BCD2A873C1F0052790A /* InspirationSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspirationSectionView.swift; sourceTree = "<group>"; };
 		37C39BCF2A8749920052790A /* ExploreHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreHeader.swift; sourceTree = "<group>"; };
 		37C39BD12A874B620052790A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -65,6 +70,11 @@
 		37F8321F2A87EBEA002F3560 /* ActivityIndicatorLoading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorLoading.swift; sourceTree = "<group>"; };
 		37F832252A87F4AB002F3560 /* GenerateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenerateView.swift; sourceTree = "<group>"; };
 		37F832272A87F4E8002F3560 /* GenerateViewViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenerateViewViewModel.swift; sourceTree = "<group>"; };
+		37F832292A87F692002F3560 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		37F8322B2A88AF09002F3560 /* ReplicateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplicateManager.swift; sourceTree = "<group>"; };
+		CC91ED689A3C05AA3E0FE553 /* Pods-Senpai.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Senpai.debug.xcconfig"; path = "Target Support Files/Pods-Senpai/Pods-Senpai.debug.xcconfig"; sourceTree = "<group>"; };
+		CE6A108D826F7EA0EDB3B536 /* Pods_Senpai.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Senpai.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBF16301193BB5C3306DE46A /* Pods-Senpai.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Senpai.release.xcconfig"; path = "Target Support Files/Pods-Senpai/Pods-Senpai.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DD73BB32E038BC6A39B09A6 /* Pods_Senpai.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +94,8 @@
 			children = (
 				37040A022A83BA1C00C428E8 /* Senpai */,
 				37040A012A83BA1C00C428E8 /* Products */,
+				3BCAE9C5CA15E67171D8E68D /* Pods */,
+				852D84F10A0278BB179BD856 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,7 +114,9 @@
 				37040A222A83DE5E00C428E8 /* Common Widgets */,
 				37040A1F2A83DD3E00C428E8 /* Utilities */,
 				37040A182A83DBA300C428E8 /* Screens */,
+				37F832292A87F692002F3560 /* ContentView.swift */,
 				37040A032A83BA1C00C428E8 /* SenpaiApp.swift */,
+				37F8322B2A88AF09002F3560 /* ReplicateManager.swift */,
 				37040A072A83BA1E00C428E8 /* Assets.xcassets */,
 				37040A0C2A83BA1E00C428E8 /* Persistence.swift */,
 				37040A0E2A83BA1E00C428E8 /* Senpai.xcdatamodeld */,
@@ -124,6 +139,7 @@
 				37F832172A87C70F002F3560 /* token Store */,
 				37C39BDE2A8771B40052790A /* Unlock */,
 				37C39BDB2A875EB30052790A /* Tabbar */,
+				3784F6E72A88CCC800EFBEA5 /* Image Complete */,
 				37040A312A84030C00C428E8 /* Explore */,
 				37040A1A2A83DBB400C428E8 /* Generate */,
 				37C39BD32A874B660052790A /* Settings */,
@@ -196,6 +212,14 @@
 			path = Widgets;
 			sourceTree = "<group>";
 		};
+		3784F6E72A88CCC800EFBEA5 /* Image Complete */ = {
+			isa = PBXGroup;
+			children = (
+				3784F6E82A88CCE300EFBEA5 /* ImageCompletedView.swift */,
+			);
+			path = "Image Complete";
+			sourceTree = "<group>";
+		};
 		37C39BD32A874B660052790A /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -256,6 +280,23 @@
 			path = Widgets;
 			sourceTree = "<group>";
 		};
+		3BCAE9C5CA15E67171D8E68D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CC91ED689A3C05AA3E0FE553 /* Pods-Senpai.debug.xcconfig */,
+				FBF16301193BB5C3306DE46A /* Pods-Senpai.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		852D84F10A0278BB179BD856 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CE6A108D826F7EA0EDB3B536 /* Pods_Senpai.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -263,9 +304,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 37040A132A83BA1E00C428E8 /* Build configuration list for PBXNativeTarget "Senpai" */;
 			buildPhases = (
+				47E62DE27CD5E74DF02A5C9D /* [CP] Check Pods Manifest.lock */,
 				370409FC2A83BA1C00C428E8 /* Sources */,
 				370409FD2A83BA1C00C428E8 /* Frameworks */,
 				370409FE2A83BA1C00C428E8 /* Resources */,
+				1EDB62CE1F3B6079CE37E807 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -321,21 +364,66 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1EDB62CE1F3B6079CE37E807 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Senpai/Pods-Senpai-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Senpai/Pods-Senpai-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Senpai/Pods-Senpai-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		47E62DE27CD5E74DF02A5C9D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Senpai-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		370409FC2A83BA1C00C428E8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				37F832282A87F4E9002F3560 /* GenerateViewViewModel.swift in Sources */,
+				37F8322C2A88AF09002F3560 /* ReplicateManager.swift in Sources */,
 				37F8321E2A87D162002F3560 /* TokePricesView.swift in Sources */,
 				37F8321C2A87C745002F3560 /* TokeStoreHeaderView.swift in Sources */,
 				37C39BD02A8749930052790A /* ExploreHeader.swift in Sources */,
 				37F832262A87F4AB002F3560 /* GenerateView.swift in Sources */,
+				3784F6E92A88CCE300EFBEA5 /* ImageCompletedView.swift in Sources */,
 				37040A0D2A83BA1E00C428E8 /* Persistence.swift in Sources */,
 				37040A5C2A86896A00C428E8 /* ExploreSectionView.swift in Sources */,
 				37C39BD22A874B620052790A /* SettingsView.swift in Sources */,
 				37C39BE72A8778730052790A /* GeneralHeader.swift in Sources */,
 				37C39BE32A8771E60052790A /* unlcokFeatureView.swift in Sources */,
+				37F8322A2A87F692002F3560 /* ContentView.swift in Sources */,
 				37040A242A83DEB000C428E8 /* HeaderView.swift in Sources */,
 				37040A292A83E76900C428E8 /* Color.swift in Sources */,
 				37040A302A83FE5800C428E8 /* StyleSelectionView.swift in Sources */,
@@ -473,6 +561,7 @@
 		};
 		37040A142A83BA1E00C428E8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CC91ED689A3C05AA3E0FE553 /* Pods-Senpai.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -501,6 +590,7 @@
 		};
 		37040A152A83BA1E00C428E8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FBF16301193BB5C3306DE46A /* Pods-Senpai.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
