@@ -8,18 +8,31 @@
 import SwiftUI
 
 
-enum APIError: Error {
-    case requestFailed
-    case responseUnsuccessful
-    case invalidData
-}
 
 class ReplicateAPI {
     static let shared = ReplicateAPI()
     
     private let baseURL = URL(string: "https://api.replicate.com/v1/predictions")!
     
-    func makePrediction(completion: @escaping (Result<PredictionResponse, APIError>) -> Void) {
+    
+    
+    
+    func makePrediction(){
+        
+        getPredictionUrls { replicatePredictionIdResponse in
+            
+            print("replicatePredictionIdResponse ",replicatePredictionIdResponse)
+            self.handlePredictionResponse(replicatePredictionIdResponse)
+            
+        } failure: { errorString in
+            print("error string")
+        }
+        
+        
+    }
+    
+    
+    private func getPredictionUrls(success: @escaping ((ReplicatePredictionIdResponse) -> Void), failure: @escaping ((String) -> Void)) {
         print("function called")
         
         let input = ["motion_module": "mm_sd_v14"]
@@ -35,44 +48,89 @@ class ReplicateAPI {
             request.httpBody = try JSONSerialization.data(withJSONObject: requestData)
         } catch {
             print("Request data serialization error:", error)
-            completion(.failure(.invalidData))
+            //completion(.failure(.invalidData))
             return
         }
         
         URLSession.shared.dataTask(with: request) { data, response, error in
             
             if let error = error {
-                print("Request error:", error)
-                completion(.failure(.requestFailed))
-                return
-            }
-            
-            guard let httpResponse = response as? HTTPURLResponse else {
-                print("Invalid response")
-                completion(.failure(.responseUnsuccessful))
+                failure(error.localizedDescription)
                 return
             }
             
             
-            print("httpResponse.statusCode ",httpResponse.statusCode)
-            
-            if let data = data {
-                if let outputString = String(data: data, encoding: .utf8) {
-                    print("outputString ",outputString)
-                    //self.output = outputString
-                }
+            guard let data = data else {
+                failure("Response data is nil")
+                return
             }
+            
+            
+            let decoder = JSONDecoder()
+            do{
+                let response = try decoder.decode(ReplicatePredictionIdResponse.self, from: data)
+                success(response)
+                
+            }catch{
+                failure(error.localizedDescription)
+            }
+            
+            
         }.resume()
         
         
     }
+    
+    
+    
+    
+    private func handlePredictionResponse(_ predictionResponse: ReplicatePredictionIdResponse) {
+        // Extract necessary information from the predictionResponse
+        if let outputUrls = predictionResponse.urls,
+           let getURLString = outputUrls.get {
+            
+            callSecondAPI(with: getURLString, authorizationToken: API_TOKEN)
+        }
+    }
+    
+    private func callSecondAPI(with url: String, authorizationToken: String) {
+        guard let secondAPIURL = URL(string: url) else {
+            print("Invalid URL:", url)
+            return
+        }
+        
+        var request = URLRequest(url: secondAPIURL)
+        request.httpMethod = "GET"
+        request.addValue("Token \(authorizationToken)", forHTTPHeaderField: "Authorization")
+        
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            // Handle the response of the second API call
+            if let error = error {
+                print("Second API Error:", error)
+                return
+            }
+            
+            
+            
+            guard let data = data else { return }
+            if let responseString = String(data: data, encoding: .utf8) {
+                print("Second API Response Data:")
+                print(responseString)
+                
+                // Parse and use the data from the second API response if needed
+                // You can use JSONSerialization or JSONDecoder here
+                // For example:
+                // let decodedData = try? JSONDecoder().decode(YourSecondAPIResponseStruct.self, from: data)
+                // ... Handle decodedData ...
+            } else {
+                print("Failed to convert response data to string.")
+            }
+            
+        }.resume()
+    }
+    
+    
 }
 
-struct PredictionResponse: Codable {
-    let id: String
-    let input: [String: String]
-    let output: String?
-    let status: String
-}
 
 

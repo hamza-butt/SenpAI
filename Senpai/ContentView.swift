@@ -10,7 +10,6 @@ import SwiftUI
 
 
 struct ContentView: View {
-    @State private var predictionResponse: PredictionResponse?
     
     var body: some View {
         VStack {
@@ -19,26 +18,13 @@ struct ContentView: View {
                 .padding()
             
             Button("Make Prediction") {
-                ReplicateAPI.shared.makePrediction { result in
-                    switch result {
-                    case .success(let response):
-                        DispatchQueue.main.async {
-                            self.predictionResponse = response
-                        }
-                    case .failure:
-                        // Handle error
-                        break
-                    }
-                }
+                
+                ReplicateAPI.shared.makePrediction()
             }
             .padding()
             
-            if let predictionResponse = predictionResponse {
-                Text("Prediction Status: \(predictionResponse.status)")
-                if let output = predictionResponse.output {
-                    Text("Prediction Output: \(output)")
-                }
-            }
+            
+            
         }
         .padding()
     }
