@@ -15,6 +15,11 @@ let KEY_SECRET = "78a28222b403047cf99bc6d910e45490"
 let IMAGE_GENERATE_PRICE = 1
 
 
+//let API_TOKEN = "r8_fJmgXmxouMafMr8rMUmZjQmbiteEsJi1PdR9B"
+let API_TOKEN = "r8_5h6DWVouMgdqG3BkqxFonhaJH0Gkh1H0ariyW"
+
+
+
 
 
 

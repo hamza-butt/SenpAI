@@ -22,6 +22,8 @@
 		37040A332A84031C00C428E8 /* Explore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37040A322A84031B00C428E8 /* Explore.swift */; };
 		37040A5C2A86896A00C428E8 /* ExploreSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37040A5B2A86896900C428E8 /* ExploreSectionView.swift */; };
 		3784F6E92A88CCE300EFBEA5 /* ImageCompletedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3784F6E82A88CCE300EFBEA5 /* ImageCompletedView.swift */; };
+		3784F6EF2A8D0C3D00EFBEA5 /* robot.json in Resources */ = {isa = PBXBuildFile; fileRef = 3784F6EE2A8D0C3D00EFBEA5 /* robot.json */; };
+		3784F6F22A8D0D1200EFBEA5 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3784F6F12A8D0D1200EFBEA5 /* LottieView.swift */; };
 		37C39BCE2A873C1F0052790A /* InspirationSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C39BCD2A873C1F0052790A /* InspirationSectionView.swift */; };
 		37C39BD02A8749930052790A /* ExploreHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C39BCF2A8749920052790A /* ExploreHeader.swift */; };
 		37C39BD22A874B620052790A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C39BD12A874B620052790A /* SettingsView.swift */; };
@@ -56,6 +58,8 @@
 		37040A322A84031B00C428E8 /* Explore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Explore.swift; sourceTree = "<group>"; };
 		37040A5B2A86896900C428E8 /* ExploreSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreSectionView.swift; sourceTree = "<group>"; };
 		3784F6E82A88CCE300EFBEA5 /* ImageCompletedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCompletedView.swift; sourceTree = "<group>"; };
+		3784F6EE2A8D0C3D00EFBEA5 /* robot.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = robot.json; sourceTree = "<group>"; };
+		3784F6F12A8D0D1200EFBEA5 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		37C39BCD2A873C1F0052790A /* InspirationSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspirationSectionView.swift; sourceTree = "<group>"; };
 		37C39BCF2A8749920052790A /* ExploreHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreHeader.swift; sourceTree = "<group>"; };
 		37C39BD12A874B620052790A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -110,6 +114,7 @@
 		37040A022A83BA1C00C428E8 /* Senpai */ = {
 			isa = PBXGroup;
 			children = (
+				3784F6F02A8D0C4100EFBEA5 /* Lottie */,
 				37040A272A83E76300C428E8 /* Extension */,
 				37040A222A83DE5E00C428E8 /* Common Widgets */,
 				37040A1F2A83DD3E00C428E8 /* Utilities */,
@@ -173,6 +178,7 @@
 				37040A232A83DEB000C428E8 /* HeaderView.swift */,
 				37040A2C2A83FCA600C428E8 /* BaseButton.swift */,
 				37C39BE62A8778730052790A /* GeneralHeader.swift */,
+				3784F6F12A8D0D1200EFBEA5 /* LottieView.swift */,
 			);
 			path = "Common Widgets";
 			sourceTree = "<group>";
@@ -218,6 +224,14 @@
 				3784F6E82A88CCE300EFBEA5 /* ImageCompletedView.swift */,
 			);
 			path = "Image Complete";
+			sourceTree = "<group>";
+		};
+		3784F6F02A8D0C4100EFBEA5 /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				3784F6EE2A8D0C3D00EFBEA5 /* robot.json */,
+			);
+			path = Lottie;
 			sourceTree = "<group>";
 		};
 		37C39BD32A874B660052790A /* Settings */ = {
@@ -358,6 +372,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				37040A0B2A83BA1E00C428E8 /* Preview Assets.xcassets in Resources */,
+				3784F6EF2A8D0C3D00EFBEA5 /* robot.json in Resources */,
 				37040A082A83BA1E00C428E8 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -411,6 +426,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3784F6F22A8D0D1200EFBEA5 /* LottieView.swift in Sources */,
 				37F832282A87F4E9002F3560 /* GenerateViewViewModel.swift in Sources */,
 				37F8322C2A88AF09002F3560 /* ReplicateManager.swift in Sources */,
 				37F8321E2A87D162002F3560 /* TokePricesView.swift in Sources */,

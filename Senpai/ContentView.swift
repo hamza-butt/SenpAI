@@ -10,33 +10,41 @@ import SwiftUI
 
 
 struct ContentView: View {
-    @ObservedObject var replicateManager = ReplicateManager()
+    @State private var predictionResponse: PredictionResponse?
     
     var body: some View {
-        
-        Button {
-            replicateManager.runModel()
-        } label: {
-            Text("Create Video")
+        VStack {
+            Text("Replicate API Demo")
+                .font(.largeTitle)
+                .padding()
+            
+            Button("Make Prediction") {
+                ReplicateAPI.shared.makePrediction { result in
+                    switch result {
+                    case .success(let response):
+                        DispatchQueue.main.async {
+                            self.predictionResponse = response
+                        }
+                    case .failure:
+                        // Handle error
+                        break
+                    }
+                }
+            }
+            .padding()
+            
+            if let predictionResponse = predictionResponse {
+                Text("Prediction Status: \(predictionResponse.status)")
+                if let output = predictionResponse.output {
+                    Text("Prediction Output: \(output)")
+                }
+            }
         }
-
-        
-//        VStack {
-//            if let videoData = replicateManager.videoData,
-//               let videoURL = URL(string: "data:video/mp4;base64,\(videoData.base64EncodedString())") {
-//                VideoPlayer(player: AVPlayer(url: videoURL))
-//                    .onAppear {
-//                        replicateManager.runModel()
-//                    }
-//            } else {
-//                Text("Loading video...")
-//            }
-//        }
-        
-        
-        
+        .padding()
     }
 }
+
+
 
 
 struct ContentView_Previews: PreviewProvider {

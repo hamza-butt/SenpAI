@@ -7,5 +7,6 @@ target 'Senpai' do
 
   # Pods for Senpai
 pod 'AlertToast'
+pod 'lottie-ios'
 
 end
