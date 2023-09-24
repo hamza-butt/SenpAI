@@ -7,28 +7,61 @@
 
 import AlertToast
 import SwiftUI
+import AVFoundation
+import AVKit
+
 
 
 struct ContentView: View {
     
+    
+    @State private var player: AVPlayer?
+    @ObservedObject var viewModel = ReplicateAPIViewModel()
+    
     var body: some View {
         VStack {
-            Text("Replicate API Demo")
-                .font(.largeTitle)
-                .padding()
-            
-            Button("Make Prediction") {
-                
-                ReplicateAPI.shared.makePrediction()
+            if let player = player {
+                VideoPlayer(player: player)
+                    .onDisappear {
+                        // Pause the player when the view disappears
+                        player.pause()
+                    }
+            } else {
+                Text("Loading Video...")
             }
-            .padding()
             
-            
-            
+            Button("Make Prediction") { viewModel.makePrediction() }
         }
-        .padding()
+        .onReceive(viewModel.$output) { output in
+            if let outputURLString = output, let url = URL(string: outputURLString) {
+                let player = AVPlayer(url: url)
+                self.player = player
+                player.play()
+            }
+        }
     }
 }
+
+
+
+
+
+
+//    var body: some View {
+//        VStack {
+//            Text("Replicate API Demo")
+//                .font(.largeTitle)
+//                .padding()
+//
+//
+//            .padding()
+//
+//
+//
+//        }
+//        .padding()
+//    }
+//}
 
 
 
